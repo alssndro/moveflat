@@ -1,3 +1,3 @@
-module MoveflatScraper
+module Moveflat
   VERSION = "0.0.1"
 end
