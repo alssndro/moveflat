@@ -65,6 +65,10 @@ RSpec.describe Moveflat::Scraper do
           it "has the correct utilities included status" do
             expect(place.includes_utilities?).to eq(false)
           end
+
+          it "has the correct locations" do
+            expect(place.location).to eq("East Finchley")
+          end
         end
 
         describe "place 2" do
@@ -113,8 +117,11 @@ RSpec.describe Moveflat::Scraper do
           it "has the correct utilities included status" do
             expect(place.includes_utilities?).to eq(true)
           end
-        end
 
+          it "has the correct locations" do
+            expect(place.location).to eq("Whitechapel")
+          end
+        end
       end
     end
 

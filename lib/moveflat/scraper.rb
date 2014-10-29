@@ -2,8 +2,6 @@ require 'nokogiri'
 require 'json'
 require 'open-uri'
 
-#require_relative 'flat'
-
 module Moveflat
   class Scraper
     def scrape_list(url)
@@ -26,7 +24,7 @@ module Moveflat
           includes_council_tax: bill_info[:includes_council_tax],
           includes_utilities: bill_info[:includes_utilities],
           link: extract_link(place_html),
-          locations: extract_locations(place_html),
+          location: extract_location(place_title),
           moveflat_id: extract_moveflat_id(place_html),
           place_type: extract_place_type(place_title),
           price_per_month: extract_price_per_month(place_title),
@@ -57,8 +55,10 @@ module Moveflat
       title.gsub(/london/i, "").strip
     end
 
-    def extract_locations(place_html)
-      []
+    def extract_location(place_title)
+      Moveflat::LONDON_AREAS.each do |area|
+        return area if place_title.downcase.match(area.downcase)
+      end
     end
 
     def extract_image_url(place_html)
@@ -89,7 +89,7 @@ module Moveflat
 
     def extract_date_listed(place_text)
       date_string = place_text.match(/On or renewed [0-9]{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)/i).to_s
-      Date.parse(date_string.gsub("On or renewed ", ""))
+      Date.parse(date_string.delete("On or renewed "))
     end
 
     # TODO: DRY this up with other date extraction method

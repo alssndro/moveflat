@@ -2,6 +2,10 @@
 
 Scrape accommodation info from [Moveflat](http://moveflat.com).
 
+## TODO
+
+Removes 'London' from all titles, even when it shouldn't (e.g. when a location is London Bridge)
+
 ## Installation
 
 Add this line to your application's Gemfile:
