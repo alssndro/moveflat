@@ -29,7 +29,7 @@ module Moveflat
           locations: extract_locations(place_html),
           moveflat_id: extract_moveflat_id(place_html),
           place_type: extract_place_type(place_title),
-          price: extract_price(place_title),
+          price_per_month: extract_price_per_month(place_title),
           short_let: extract_short_let(place_html.text),
           title: place_title
         }
@@ -83,8 +83,8 @@ module Moveflat
       remove_bad_html(place_html.at_css("p").text)
     end
 
-    def extract_price(place_title)
-      place_title.match(/£[0-9]+/).to_s
+    def extract_price_per_month(place_title)
+      place_title.match(/£[0-9]+/).to_s.delete("£").to_f
     end
 
     def extract_date_listed(place_text)

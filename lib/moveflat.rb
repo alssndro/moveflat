@@ -1,4 +1,6 @@
 require "moveflat/version"
+require "moveflat/scraper"
+require "moveflat/place"
 
 module Moveflat
   BASE_URL = "http://moveflat.com"

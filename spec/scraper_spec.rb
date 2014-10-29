@@ -26,6 +26,10 @@ RSpec.describe Moveflat::Scraper do
             expect(place.title).to eq("East Finchley houseshare N2 £995")
           end
 
+          it "has the correct price per month" do
+            expect(place.price_per_month).to eq(995)
+          end
+
           it "has the correct link" do
             expect(place.link).to eq("http://moveflat.com/c/432322.htm")
           end
@@ -68,6 +72,10 @@ RSpec.describe Moveflat::Scraper do
 
           it "has the correct title" do
             expect(place.title).to eq("Whitechapel flatshare E1 £750")
+          end
+
+          it "has the correct price per month" do
+            expect(place.price_per_month).to eq(750)
           end
 
           it "has the correct link" do

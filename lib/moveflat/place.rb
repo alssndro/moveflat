@@ -1,7 +1,7 @@
 module Moveflat
   class Place
     attr_accessor :available_from, :date_listed, :description, :image_url, :link, 
-                  :title, :locations, :place_type, :price, :short_let
+                  :title, :locations, :place_type, :price_per_month, :short_let
 
     def initialize(params)
       @available_from = params.fetch(:available_from)
@@ -13,7 +13,7 @@ module Moveflat
       @link = params.fetch(:link)
       @title = params.fetch(:title)
       @locations = params.fetch(:locations)
-      @price = params.fetch(:price)
+      @price_per_month = params.fetch(:price_per_month)
       @place_type = params.fetch(:place_type)
       @short_let = params.fetch(:short_let)
     end
