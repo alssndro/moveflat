@@ -1,5 +1,8 @@
 require "moveflat/version"
 
 module Moveflat
-  # Your code goes here...
+  BASE_URL = "http://moveflat.com"
+
+  # Image URLs need www
+  BASE_IMAGE_URL = "http://moveflat.com/_ImageServer.aspx?"
 end
