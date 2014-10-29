@@ -59,6 +59,8 @@ module Moveflat
       Moveflat::LONDON_AREAS.each do |area|
         return area if place_title.downcase.match(area.downcase)
       end
+
+      return "Unknown"
     end
 
     def extract_image_url(place_html)
