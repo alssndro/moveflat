@@ -35,7 +35,7 @@ RSpec.describe Moveflat::Scraper do
           end
 
           it "has the correct image URL" do
-            expect(place.image_url).to eq("http://www.moveflat.com/_ImageServer.aspx?f=432322A-+.jpg")
+            expect(place.image_url).to eq("http://www.moveflat.com/_ImageServer.aspx?f=432322A.jpg")
           end
 
           it "has the correct place type" do
@@ -47,7 +47,7 @@ RSpec.describe Moveflat::Scraper do
           end
 
           it "has the correct 'available' date" do
-            expect(place.available_from).to eq(Date.new(2014,10,29))
+            expect(place.available_from).to eq(Date.today)
           end        
 
           it "has the correct 'date listed' date" do
@@ -66,8 +66,12 @@ RSpec.describe Moveflat::Scraper do
             expect(place.includes_utilities?).to eq(false)
           end
 
-          it "has the correct locations" do
+          it "has the correct location" do
             expect(place.location).to eq("East Finchley")
+          end
+
+          it "has the correct Moveflat ID" do
+            expect(place.moveflat_id).to eq("432322")
           end
         end
 
@@ -87,7 +91,7 @@ RSpec.describe Moveflat::Scraper do
           end
 
           it "has the correct image URL" do
-            expect(place.image_url).to eq("http://www.moveflat.com/_ImageServer.aspx?f=460747A-+.jpg")
+            expect(place.image_url).to eq("http://www.moveflat.com/_ImageServer.aspx?f=460747A.jpg")
           end
 
           it "has the correct place type" do
@@ -120,6 +124,16 @@ RSpec.describe Moveflat::Scraper do
 
           it "has the correct locations" do
             expect(place.location).to eq("Whitechapel")
+          end
+
+          it "has the correct Moveflat ID" do
+            expect(place.moveflat_id).to eq("460747")
+          end
+        end
+
+        context "when the place's title has 'London' in it" do
+          it "doesn't remove 'London' from the title" do
+            expect(place_list[3].title).to eq("London bridge flatshare se1 £680")
           end
         end
       end
