@@ -139,4 +139,15 @@ module InfoExtractors
   def extract_moveflat_id_from_single_page(place_html)
     place_html.at_css("#_mp")["attr"]
   end
+
+  def build_image_list(place_html)
+    moveflat_id = extract_moveflat_id_from_single_page(place_html)
+    no_of_images = place_html.xpath("//a[@style='margin:1px;']/img").size
+    image_list = Array.new(no_of_images)
+
+    image_list.map.with_index do |image, n|
+      sequence_letter = ("A".."Z").to_a[n]
+      "#{Moveflat::BASE_IMAGE_URL}f=#{moveflat_id}#{sequence_letter}.jpg"
+    end
+  end
 end

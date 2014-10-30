@@ -1,6 +1,6 @@
 module Moveflat
   class Place
-    attr_accessor :available_from, :date_listed, :description, :image_url, :interests, 
+    attr_accessor :available_from, :date_listed, :description, :image_url, :images, :interests, 
                   :features, :link, :location, :moveflat_id, :occupations, :place_type, 
                   :price_per_month, :short_let, :title
 
@@ -27,7 +27,7 @@ module Moveflat
     def includes_council_tax?
       @includes_council_tax
     end
-
+    
     # def available_from
     #   if @available_from <= Date.today
     #     "Now"

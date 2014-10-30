@@ -40,6 +40,7 @@ module Moveflat
         place.interests = extract_interests(@html)
         place.occupations = extract_occupations(@html)
         place.features = extract_features(@html)
+        place.images = build_image_list(@html)
       end
     end
 

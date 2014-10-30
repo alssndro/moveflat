@@ -74,6 +74,13 @@ RSpec.describe Moveflat::PlaceParser do
       it "has the correct features" do
         expect(place.features).to eq(["Living Room", "Double Bed", "Bike OK", "Broadband", "Central Heating", "Washing Machine", "Dishwasher", "Dryer", "Cleaner", "Garden/Roof terrace", "Car parking"])
       end
+
+      it "has the correct list of images" do
+        expect(place.images).to eq(["http://www.moveflat.com/_ImageServer.aspx?f=459997A.jpg",
+                                    "http://www.moveflat.com/_ImageServer.aspx?f=459997B.jpg",
+                                    "http://www.moveflat.com/_ImageServer.aspx?f=459997C.jpg",
+                                    "http://www.moveflat.com/_ImageServer.aspx?f=459997D.jpg"])
+      end 
     end
   end
 end
