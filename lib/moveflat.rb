@@ -1,7 +1,5 @@
-require "moveflat/version"
-require "moveflat/scraper"
-require "moveflat/place"
-require "moveflat/place_list_parser"
+require 'moveflat/version'
+require 'moveflat/scraper'
 
 require 'yaml'
 

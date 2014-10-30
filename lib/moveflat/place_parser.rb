@@ -1,4 +1,6 @@
 require 'nokogiri'
+require 'moveflat/info_extractors'
+require 'moveflat/place'
 
 # Parses the HTML of an individual place page
 # e.g http://www.moveflat.com/c/123456789.htm

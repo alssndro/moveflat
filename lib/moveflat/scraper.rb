@@ -1,4 +1,6 @@
 require 'open-uri'
+require 'moveflat/place_list_parser'
+require 'moveflat/place_parser'
 
 module Moveflat
   class Scraper
@@ -6,6 +8,12 @@ module Moveflat
       raise InvalidUrl unless valid_url?(url)
 
       PlaceListParser.new(open(URI.parse(url))).parse
+    end
+
+    def scrape_place(url)
+      raise InvalidUrl unless valid_url?(url)
+
+      PlaceParser.new(open(URI.parse(url))).parse
     end
 
     private

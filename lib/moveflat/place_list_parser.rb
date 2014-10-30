@@ -1,4 +1,6 @@
 require 'nokogiri'
+require 'moveflat/info_extractors'
+require 'moveflat/place'
 
 # Parses the HTML of a list of places
 # e.g http://www.moveflat.com/london-flat/flatshare-flatmate/property/Box/
