@@ -31,7 +31,7 @@ RSpec.describe Moveflat::Scraper do
           end
 
           it "has the correct link" do
-            expect(place.link).to eq("http://moveflat.com/c/432322.htm")
+            expect(place.link).to eq("http://www.moveflat.com/c/432322.htm")
           end
 
           it "has the correct image URL" do
@@ -87,7 +87,7 @@ RSpec.describe Moveflat::Scraper do
           end
 
           it "has the correct link" do
-            expect(place.link).to eq("http://moveflat.com/c/460747.htm")
+            expect(place.link).to eq("http://www.moveflat.com/c/460747.htm")
           end
 
           it "has the correct image URL" do

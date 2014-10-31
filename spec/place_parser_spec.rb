@@ -20,7 +20,7 @@ RSpec.describe Moveflat::PlaceParser do
       end
 
       it "has the correct link" do
-        expect(place.link).to eq("http://moveflat.com/c/459997.htm")
+        expect(place.link).to eq("http://www.moveflat.com/c/459997.htm")
       end
 
       it "has the correct image URL" do
