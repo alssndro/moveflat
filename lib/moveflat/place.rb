@@ -1,7 +1,7 @@
 module Moveflat
   class Place
     attr_accessor :available_from, :date_listed, :description, :image_url, :images, :interests, 
-                  :features, :link, :location, :moveflat_id, :occupations, :place_type, 
+                  :features, :link, :location, :moveflat_id, :occupations, :place_type, :postcode,
                   :price_per_month, :short_let, :title
 
     def initialize(params)
@@ -15,6 +15,7 @@ module Moveflat
       @title = params.fetch(:title)
       @location = params.fetch(:location)
       @moveflat_id = params.fetch(:moveflat_id)
+      @postcode = params.fetch(:postcode)
       @price_per_month = params.fetch(:price_per_month)
       @place_type = params.fetch(:place_type)
       @short_let = params.fetch(:short_let)
@@ -27,7 +28,7 @@ module Moveflat
     def includes_council_tax?
       @includes_council_tax
     end
-    
+
     # def available_from
     #   if @available_from <= Date.today
     #     "Now"

@@ -50,7 +50,7 @@ RSpec.describe Moveflat::PlaceListParser do
         end        
 
         it "has the correct 'date listed' date" do
-          expect(place.date_listed).to eq(Date.new(2014,10,29))
+          expect(place.date_listed).to eq(Date.parse("29 October"))
         end
 
         it "has the correct let short let type" do
@@ -71,6 +71,10 @@ RSpec.describe Moveflat::PlaceListParser do
 
         it "has the correct Moveflat ID" do
           expect(place.moveflat_id).to eq("432322")
+        end
+
+        it "has the correct postcode" do
+          expect(place.postcode).to eq("N2")
         end
       end
 
@@ -106,7 +110,7 @@ RSpec.describe Moveflat::PlaceListParser do
         end        
 
         it "has the correct 'date listed' date" do
-          expect(place.date_listed).to eq(Date.new(2014,10,29))
+          expect(place.date_listed).to eq(Date.parse("29 October"))
         end
 
         it "has the correct let short let type" do
@@ -127,6 +131,10 @@ RSpec.describe Moveflat::PlaceListParser do
 
         it "has the correct Moveflat ID" do
           expect(place.moveflat_id).to eq("460747")
+        end
+
+        it "has the correct postcode" do
+          expect(place.postcode).to eq("E1")
         end
       end
 

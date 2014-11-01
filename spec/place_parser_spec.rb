@@ -40,7 +40,7 @@ RSpec.describe Moveflat::PlaceParser do
       end        
 
       it "has the correct 'date listed' date" do
-        expect(place.date_listed).to eq(Date.new(2014,10,26))
+        expect(place.date_listed).to eq(Date.parse("26 October"))
       end
 
       it "has the correct let short let type" do
@@ -70,6 +70,10 @@ RSpec.describe Moveflat::PlaceParser do
       it "has the correct occupations" do
         expect(place.occupations).to eq("Finance")
       end      
+
+      it "has the correct postcode" do
+        expect(place.postcode).to eq("NW1")
+      end
 
       it "has the correct features" do
         expect(place.features).to eq(["Living Room", "Double Bed", "Bike OK", "Broadband", "Central Heating", "Washing Machine", "Dishwasher", "Dryer", "Cleaner", "Garden/Roof terrace", "Car parking"])

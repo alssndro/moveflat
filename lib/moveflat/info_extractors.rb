@@ -59,7 +59,7 @@ module InfoExtractors
 
   def extract_date_listed(place_text)
     date_string = place_text.match(/On or renewed [0-9]{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)/i).to_s
-    Date.parse(date_string.delete("On or renewed "))
+    Date.parse(date_string.gsub("On or renewed ", ""))
   end
 
   # TODO: DRY this up with other date extraction method
@@ -149,5 +149,9 @@ module InfoExtractors
       sequence_letter = ("A".."Z").to_a[n]
       "#{Moveflat::BASE_IMAGE_URL}f=#{moveflat_id}#{sequence_letter}.jpg"
     end
+  end
+
+  def extract_postcode(place_title)
+    place_title.match(/[a-z]{1,2}[0-9]{1,2}/i).to_s
   end
 end

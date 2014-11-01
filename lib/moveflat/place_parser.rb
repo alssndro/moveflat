@@ -32,6 +32,7 @@ module Moveflat
         link: "#{Moveflat::BASE_URL}/c/#{moveflat_id}.htm",
         location: extract_location(place_title),
         moveflat_id: moveflat_id,
+        postcode: extract_postcode(place_title),
         place_type: extract_place_type(place_title),
         price_per_month: extract_price_per_month(place_title),
         short_let: extract_short_let(html.text),
